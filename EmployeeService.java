@@ -4,7 +4,7 @@ public interface EmployeeService {
 
 	public double calculateYearlySalary(double salary);
 
-	public String findByEmployeeNumber(int empNo);
+	public void findByEmployeeNumber(int empNo);
 
 	public String updateEmployee(int empNo);
 

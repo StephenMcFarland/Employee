@@ -39,14 +39,15 @@ public class EmployeeServiceImpl implements EmployeeService {
 	   }
 
 
-	public String findByEmployeeNumber(int empNo) {
+	public void findByEmployeeNumber(int empNo) {
 		//
 		int index = 0;
 		if(empList.contains(empNo)) {
 			index = empList.indexOf(empNo);
 			 
 		}
-		return (String)empList.get(index);
+		//return (String)empList.get(index);
+		System.out.println(empList.get(index));
 	}
 	public String updateEmployee(int empNo) {
 		// TODO Auto-generated method stub

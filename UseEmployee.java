@@ -32,7 +32,14 @@ empList.forEach(str -> System.out.println(str));
 
 				break;
 			case 3:
-
+//ES.findByEmployeeNumber(102);
+				int index = 0;
+				if(empList.contains("104")) {
+					index = empList.indexOf("104");
+					 
+				}
+				//return (String)empList.get(index);
+				System.out.println(empList.get(index));
 				break;
 			case 4:
 
