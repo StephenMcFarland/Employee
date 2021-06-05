@@ -1,10 +1,11 @@
+import java.util.List;
 
 public interface EmployeeService {
-	public void displayAllEmployees();
+	public void displayAllEmployees(List<Employee> empList);
 
-	public double calculateYearlySalary(double salary);
+	public double calculateYearlySalary(List<Employee> empList, int emp);
 
-	public void findByEmployeeNumber(int empNo);
+	public void findByEmployeeNumber(List<Employee> empList, int empNo);
 
 	public String updateEmployee(int empNo);
 

@@ -1,5 +1,4 @@
 
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -7,39 +6,46 @@ import java.util.Scanner;
 public class UseEmployee {
 	static Scanner s = new Scanner(System.in);
 	static int selection = 0;
-public static EmployeeServiceImpl ES = new EmployeeServiceImpl();
+	public static EmployeeServiceImpl ES = new EmployeeServiceImpl();
 
 	public static void main(String[] args) {
 		//
-		List<String> empList = new ArrayList<String>();
-		 empList.add("101 george smith 55000 phoenix alaska");
-		 empList.add("102 ginny smith 85000 holms texas");
-		 empList.add("103 gale smith 75000 springfield florida");
-		 empList.add("104 greg smith 65000 qualitee vermont");
-		 
+		List<Employee> empList = new ArrayList<Employee>();
+
+		Employee e1 = new Employee(101, "Ginni", 55000);
+		Employee e2 = new Employee(102, "George", 42000);
+		Employee e3 = new Employee(103, "Gack", 84000);
+		Employee e4 = new Employee(104, "Gared", 49000);
+		Employee e5 = new Employee(105, "Gessica", 92000);
+
+		empList.add(e1);
+		empList.add(e2);
+		empList.add(e3);
+		empList.add(e4);
+		empList.add(e5);
+
 		printMenu();
-			while (s.hasNext()) {
-		    	  if(s.hasNextInt()) {
-		      selection = s.nextInt();
-		      }
-			
+		while (s.hasNext()) {
+			if (s.hasNextInt()) {
+				selection = s.nextInt();
+			}
+
 			switch (selection) {
 			case 1:
-//ES.displayAllEmployees();
-empList.forEach(str -> System.out.println(str));
+				ES.displayAllEmployees(empList);
+//empList.forEach(e -> System.out.println(e));
+				printMenu();
 				break;
 			case 2:
+				System.out.println("Enter employee number 0-4: ");
+				System.out.println(ES.calculateYearlySalary(empList,s.nextInt()));
+				//ES.calculateYearlySalary(empList, s.nextInt());
 
 				break;
 			case 3:
-//ES.findByEmployeeNumber(102);
-				int index = 0;
-				if(empList.contains("104")) {
-					index = empList.indexOf("104");
-					 
-				}
-				//return (String)empList.get(index);
-				System.out.println(empList.get(index));
+				System.out.println("Enter employee number 0-4: ");
+				ES.findByEmployeeNumber(empList, s.nextInt());
+				
 				break;
 			case 4:
 

@@ -3,7 +3,7 @@ import java.util.List;
 
 public class EmployeeServiceImpl implements EmployeeService {
 	
-	static List<String> empList = new ArrayList<String>();
+	//static List<String> empList = new ArrayList<String>();
 	
 	
 	/*
@@ -13,16 +13,23 @@ public class EmployeeServiceImpl implements EmployeeService {
 	 * empList.add("104 greg smith 65000 qualitee vermont");
 	 */
 	
-	public void displayAllEmployees(){
+	public void displayAllEmployees(List<Employee> empList){
 		empList.forEach(str -> System.out.println(str));
 		
 		
 	}
 	 // Calculate the yearly salary of employee base $40K + $1K per yrs experience
-	   public double calculateYearlySalary(Employee employee) {
+	   public double calculateYearlySalary(List<Employee> empList, int emp) {
 	      double yearlySalary = 0;
-	      yearlySalary = employee.getSalary() * 12;
+	      Employee e = empList.get(emp);
+	      //List<> tempList = new ArrayList<>();
+	      yearlySalary = e.getSalary();
+	      //Employee tempEmp.add(empList.get(emp));
+	      System.out.println(yearlySalary);
+	      yearlySalary = 2222.22;//tempEmp.getSalary();
+	      
 	      return yearlySalary;
+	      
 	   }
 		
 	   // Calculate the appraisal amount of employee
@@ -39,15 +46,22 @@ public class EmployeeServiceImpl implements EmployeeService {
 	   }
 
 
-	public void findByEmployeeNumber(int empNo) {
+	public void findByEmployeeNumber(List<Employee> empList, int empNo) {
 		//
-		int index = 0;
-		if(empList.contains(empNo)) {
-			index = empList.indexOf(empNo);
+		//int index = 0;
+		List<Employee> tempList = new ArrayList<Employee>();
+		
+		//for(int i = 0;i<empList.size();i++) {
+			//tempList.set(0,empList.get(2));
+			
+		//if(UseEmployee.e1.getEmpNo()==empNo) {
+			//index = empList.indexOf(empNo);
+			//System.out.println(empList.get(2));
 			 
-		}
+		//}
+		//}
 		//return (String)empList.get(index);
-		System.out.println(empList.get(index));
+		
 	}
 	public String updateEmployee(int empNo) {
 		// TODO Auto-generated method stub
@@ -57,8 +71,5 @@ public class EmployeeServiceImpl implements EmployeeService {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	public double calculateYearlySalary(double salary) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+
 }
