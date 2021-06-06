@@ -18,4 +18,22 @@ public class Address {
 	public void setEmpState(String empState) {
 		this.empState = empState;
 	}
+	
+	public Address(String empCity, String empState) {
+		super();
+		this.empCity = empCity;
+		this.empState = empState;
+		
+	}
+	
+	public Address(Address address) {
+		
+		this.empCity = address.empCity;
+		this.empState = address.empState;
+	}
+	
+	@Override
+	public String toString() {
+		return "Address [empCity=" + empCity + ", empState=" + empState + "]";
+	}
 }

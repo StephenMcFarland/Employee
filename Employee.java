@@ -2,6 +2,8 @@
 public class Employee {
 
 	private transient String empName;
+	private transient String empCity;
+	private transient String empState;
 	private double salary;
 	private int empNo;
 	//private Address address;
@@ -44,13 +46,13 @@ public class Employee {
 		this.empNo = empNo;
 	}
 	
-	public Employee(int empNo, String empName, int salary) {
+	public Employee(int empNo, String empName, int salary, String empCity, String empState) {
 		super();
 		this.empNo = empNo;
 		this.empName = empName;
 		this.salary = salary;
-		//this.city = city;
-		//this.state = state;
+		this.empCity = empCity;
+		this.empState = empState;
 	}
 	
 	public Employee(Employee employee) {
@@ -61,6 +63,7 @@ public class Employee {
 	
 	@Override
 	public String toString() {
-		return "Employee [empNo=" + empNo + ", empName=" + empName + "]";
+		return "Employee [empNo=" + empNo + ", empName=" + empName + 
+				", empCity=" + empCity + ", empState=" + empState +"]";
 	}
 }

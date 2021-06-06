@@ -42,7 +42,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 			}
 			
 
-				System.out.println(e.toString());
+				//System.out.println(e.toString());
 return e;
 //			if(i>empList.size()) {
 //				System.out.println("No such employee found.");
@@ -56,6 +56,18 @@ return e;
 		//UseEmployee.empList.add(e);
 	}
 
+//	public void updateEmpCity(int empNo, String city) {
+//		// TODO Auto-generated method stub
+//		Employee e = findByEmployeeNumber(UseEmployee.empList, empNo);
+//		e.setEmpName(city);
+//		//UseEmployee.empList.add(e);
+//	}
+//	public void updateEmpState(int empNo, String state) {
+//		// TODO Auto-generated method stub
+//		Employee e = findByEmployeeNumber(UseEmployee.empList, empNo);
+//		e.setEmpName(state);
+//		//UseEmployee.empList.add(e);
+//	}
 	public void deleteEmployee(int empNo) {
 		// TODO Auto-generated method stub
 		Employee e;// = empList.get(emp);

@@ -10,13 +10,17 @@ public class UseEmployee {
 	public static List<Employee> empList = new ArrayList<Employee>();
 	public static void main(String[] args) {
 		//
-		
+		Address a1 = new Address("Phoenix","Alaska");
+		Address a2 = new Address("Billings","New Hampshire");
+		Address a3 = new Address("Springfield","Kansas");
+		Address a4 = new Address("Philly","Missouri");
+		Address a5 = new Address("Qualitee","Florida");
 
-		Employee e1 = new Employee(101, "Ginni", 15);
-		Employee e2 = new Employee(102, "George", 2);
-		Employee e3 = new Employee(103, "Gack", 44);
-		Employee e4 = new Employee(104, "Gared", 9);
-		Employee e5 = new Employee(105, "Gessica", 52);
+		Employee e1 = new Employee(101, "Ginni", 15,a1.getEmpCity(),a1.getEmpState());
+		Employee e2 = new Employee(102, "George", 2,a2.getEmpCity(),a2.getEmpState());
+		Employee e3 = new Employee(103, "Gack", 44,a3.getEmpCity(),a3.getEmpState());
+		Employee e4 = new Employee(104, "Gared", 9,a4.getEmpCity(),a4.getEmpState());
+		Employee e5 = new Employee(105, "Gessica", 52,a5.getEmpCity(),a5.getEmpState());
 
 		empList.add(e1);
 		empList.add(e2);
@@ -44,7 +48,8 @@ public class UseEmployee {
 				break;
 			case 3:
 				System.out.println("Enter employee number 101-105: ");
-				ES.findByEmployeeNumber(empList, s.nextInt());
+				Employee e = ES.findByEmployeeNumber(empList, s.nextInt());
+				System.out.println(e.toString());
 				printMenu();
 				break;
 			case 4:
@@ -53,10 +58,26 @@ public class UseEmployee {
 				ES.findByEmployeeNumber(empList, en);
 				
 				printMenuDetails();
-				s.nextInt();
+				selection = s.nextInt();
+				switch(selection) {
+				case 1:
 				System.out.flush();
 				System.out.println("Enter new employee name: ");
 				ES.updateEmpName(en, s.next());
+				printMenu();
+				break;
+				case 2:
+					System.out.flush();
+					System.out.println("Not implemented yet   Enter new employee City: ");
+					//ES.updateEmpCity(en, s.next());
+					printMenu();
+					break;
+				case 3:
+					System.out.flush();
+					System.out.println("Not implemented yet   Enter new employee State: ");
+					//ES.updateEmpState(en, s.next());
+					printMenu();
+				}
 				break;
 			case 5:
 				System.out.println("Enter employee number 101-105: ");

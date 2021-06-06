@@ -7,7 +7,7 @@ public interface EmployeeService {
 
 	public Employee findByEmployeeNumber(List<Employee> empList, int empNo);
 
-	public String updateEmployee(int empNo);
+	public void updateEmpName(int empNo, String name);
 
 	public void deleteEmployee(int empNo);
 }
