@@ -5,9 +5,9 @@ public interface EmployeeService {
 
 	public double calculateYearlySalary(List<Employee> empList, int emp);
 
-	public void findByEmployeeNumber(List<Employee> empList, int empNo);
+	public Employee findByEmployeeNumber(List<Employee> empList, int empNo);
 
 	public String updateEmployee(int empNo);
 
-	public String deleteEmployee(int empNo);
+	public void deleteEmployee(int empNo);
 }
