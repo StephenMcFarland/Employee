@@ -28,18 +28,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	}
 
-	// Calculate the appraisal amount of employee
-	public double calculateAppraisal(Employee employee) {
-		double appraisal = 0;
 
-		if (employee.getSalary() < 10000) {
-			appraisal = 500;
-		} else {
-			appraisal = 1000;
-		}
-
-		return appraisal;
-	}
 
 	public Employee findByEmployeeNumber(List<Employee> empList, int empNo) {
 		int i=0;
@@ -60,9 +49,11 @@ return e;
 //			}
 		}
 
-	public String updateEmployee(int empNo) {
+	public void updateEmpName(int empNo, String name) {
 		// TODO Auto-generated method stub
-		return null;
+		Employee e = findByEmployeeNumber(UseEmployee.empList, empNo);
+		e.setEmpName(name);
+		//UseEmployee.empList.add(e);
 	}
 
 	public void deleteEmployee(int empNo) {

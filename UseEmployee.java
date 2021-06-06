@@ -48,7 +48,15 @@ public class UseEmployee {
 				printMenu();
 				break;
 			case 4:
-
+				System.out.println("Enter employee number 101-105: ");
+				int en = s.nextInt();
+				ES.findByEmployeeNumber(empList, en);
+				
+				printMenuDetails();
+				s.nextInt();
+				System.out.flush();
+				System.out.println("Enter new employee name: ");
+				ES.updateEmpName(en, s.next());
 				break;
 			case 5:
 				System.out.println("Enter employee number 101-105: ");
@@ -70,6 +78,13 @@ public class UseEmployee {
 		System.out.println("4. Modify the employee details");
 		System.out.println("5. Delete an employee");
 		//System.out.println("6. Exit");
+
+	}
+	static void printMenuDetails() {
+		System.out.println("1. Update name");
+		System.out.println("2. Update City");
+		System.out.println("3. Update State");
+		
 
 	}
 }
