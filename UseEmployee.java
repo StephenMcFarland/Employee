@@ -97,7 +97,8 @@ public class UseEmployee {
 				printMenu();
 				break;
 			case 6:
-
+				ES.showStreams();
+				printMenu();
 				break;
 			}
 		}
@@ -110,7 +111,7 @@ public class UseEmployee {
 		System.out.println("3. Display specific employee details");//findByEmployeeNumber()
 		System.out.println("4. Modify the employee details");
 		System.out.println("5. Delete an employee");
-		//System.out.println("6. Exit");
+		System.out.println("6. Display Streams");
 
 	}
 	static void printMenuDetails() {

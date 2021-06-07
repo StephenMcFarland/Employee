@@ -1,5 +1,10 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Arrays;
+import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 
 public class EmployeeServiceImpl implements EmployeeService {
 
@@ -87,10 +92,27 @@ return e;
 				UseEmployee.empList.remove(i);
 				System.out.flush();
 				displayAllEmployees(UseEmployee.empList);
-
+			}
 			}
 			// return null;
 		}
 
+	@Override
+	public String showStreams() {
+		// memberNames.stream().filter((s) -> s.startsWith("A"))
+        //.forEach(System.out::println);
+		System.out.println("Show Employee List: ");
+		UseEmployee.empList.forEach(System.out::println);
+		
+		
+		long empTotal = UseEmployee.empList.stream().count();
+		System.out.println("Show Employee Count: " + empTotal);
+		
+//		boolean matchedResult = UseEmployee.empList.get(0).stream().anyMatch((s) -> s.contains("A"));   
+//		System.out.println(matchedResult);
+		
+//		UseEmployee.empList.stream().filter((s) -> s.startsWith("A"))
+//		 .forEach(System.out::println);
+		return null;
 	}
 }

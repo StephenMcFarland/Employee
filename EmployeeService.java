@@ -10,4 +10,6 @@ public interface EmployeeService {
 	public void updateEmpName(int empNo, String name);
 
 	public void deleteEmployee(int empNo);
+	
+	public String showStreams();
 }
