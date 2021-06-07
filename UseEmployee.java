@@ -1,15 +1,27 @@
-
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Logger;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Logger;
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Logger;
+
+
 
 public class UseEmployee {
+	static final Logger logger = Logger.getLogger(UseEmployee.class);
 	static Scanner s = new Scanner(System.in);
 	static int selection = 0;
 	public static EmployeeServiceImpl ES = new EmployeeServiceImpl();
 	public static List<Employee> empList = new ArrayList<Employee>();
 	public static void main(String[] args) {
 		//
+		//Configure logger
+		BasicConfigurator.configure();
+		logger.debug("Hello World!");
+		
 		Address a1 = new Address("Phoenix","Alaska");
 		Address a2 = new Address("Billings","New Hampshire");
 		Address a3 = new Address("Springfield","Kansas");
