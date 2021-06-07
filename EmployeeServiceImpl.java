@@ -27,7 +27,14 @@ public class EmployeeServiceImpl implements EmployeeService {
 		return yearlySalary;
 
 	}
+	public double calculateSalary(int empNoYrExp, double baseSalary) {
+		double yearlySalary = 0;
+		
+		yearlySalary = empNoYrExp * 1000 + baseSalary;
 
+		return yearlySalary;
+
+	}
 
 
 	public Employee findByEmployeeNumber(List<Employee> empList, int empNo) {
