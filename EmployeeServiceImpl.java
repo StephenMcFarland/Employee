@@ -65,13 +65,13 @@ return e;
 //			}
 		}
 
-	public void addEmployee(String name, String city, String state) {
+	public void addEmployee(String name, int yearsExp, String city, String state) {
 		// 
-		int ecount = UseEmployee.empList.size()+101;
+		int eNo = UseEmployee.empList.size()+101;
 		
 		Address a6 = new Address(city,state);
 
-		Employee e6 = new Employee(ecount, name, 15,a6.getEmpCity(),a6.getEmpState());
+		Employee e6 = new Employee(eNo, name, yearsExp,a6.getEmpCity(),a6.getEmpState());
 		
 		UseEmployee.empList.add(e6);
 	}

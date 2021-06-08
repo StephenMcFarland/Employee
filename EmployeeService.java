@@ -9,7 +9,7 @@ public interface EmployeeService {
 
 	public void updateEmpName(int empNo, String name);
 
-	public void addEmployee(String name, String City, String State);
+	public void addEmployee(String name, int yearsExp, String City, String State);
 	
 	public void deleteEmployee(int empNo);
 	

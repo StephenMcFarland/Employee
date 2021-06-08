@@ -1,6 +1,7 @@
 //import org.apache.log4j.BasicConfigurator;
 //import org.apache.log4j.Logger;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -62,14 +63,20 @@ public class UseEmployee {
 				break;
 			case 3:
 				System.out.println("Enter employee number 101-105: ");
-				Employee e = ES.findByEmployeeNumber(empList, s.nextInt());
-				System.out.println(e.toString());
+				Employee emp = ES.findByEmployeeNumber(empList, s.nextInt());
+				System.out.println(emp.toString());
 				printMenu();
 				break;
 			case 4:
 				System.out.println("Enter employee number 101-105: ");
-				int en = s.nextInt();
-				ES.findByEmployeeNumber(empList, en);
+				int empNo;
+				//try {
+					empNo = s.nextInt();
+					//}catch(InputMismatchException e) {
+						//String str = s.nextLine();
+						ES.findByEmployeeNumber(empList, empNo);
+					//}
+				
 				
 				printMenuDetails();
 				selection = s.nextInt();
@@ -77,7 +84,7 @@ public class UseEmployee {
 				case 1:
 				System.out.flush();
 				System.out.println("Enter new employee name: ");
-				ES.updateEmpName(en, s.next());
+				ES.updateEmpName(empNo, s.next());
 				printMenu();
 				break;
 				case 2:
@@ -97,11 +104,13 @@ public class UseEmployee {
 				//int empNo = s.nextInt();
 				System.out.println("Enter employee name: ");
 				String ename = s.next();
+				System.out.println("Enter years of experience: ");
+				int yearsExp = s.nextInt();
 				System.out.println("Enter employee City: ");
 				String ecity = s.next();
 				System.out.println("Enter employee State: ");
 				String estate = s.next();
-				ES.addEmployee(ename,ecity,estate);
+				ES.addEmployee(ename,yearsExp, ecity,estate);
 				LOGGER.log(Level.INFO, "Employee successfully added.");
 				printMenu();
 				break;
