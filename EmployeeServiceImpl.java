@@ -65,6 +65,17 @@ return e;
 //			}
 		}
 
+	public void addEmployee(String name, String city, String state) {
+		// 
+		int ecount = UseEmployee.empList.size()+101;
+		
+		Address a6 = new Address(city,state);
+
+		Employee e6 = new Employee(ecount, name, 15,a6.getEmpCity(),a6.getEmpState());
+		
+		UseEmployee.empList.add(e6);
+	}
+	
 	public void updateEmpName(int empNo, String name) {
 		// TODO Auto-generated method stub
 		Employee e = findByEmployeeNumber(UseEmployee.empList, empNo);

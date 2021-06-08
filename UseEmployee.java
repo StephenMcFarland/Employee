@@ -88,21 +88,37 @@ public class UseEmployee {
 					break;
 				case 3:
 					System.out.flush();
-					System.out.println("Not implemented yet   Enter new employee State: ");
-					//ES.updateEmpState(en, s.next());
+					System.out.println("Enter new employee State: ");
 					printMenu();
 				}
 				break;
 			case 5:
+				//System.out.println("Enter employee number 1 greater than last employee: ");
+				//int empNo = s.nextInt();
+				System.out.println("Enter employee name: ");
+				String ename = s.next();
+				System.out.println("Enter employee City: ");
+				String ecity = s.next();
+				System.out.println("Enter employee State: ");
+				String estate = s.next();
+				ES.addEmployee(ename,ecity,estate);
+				LOGGER.log(Level.INFO, "Employee successfully added.");
+				printMenu();
+				break;
+			case 6:
 				System.out.println("Enter employee number 101-105: ");
 				ES.deleteEmployee(s.nextInt());
 				LOGGER.log(Level.INFO, "Employee successfully deleted.");
 				printMenu();
 				break;
-			case 6:
+			case 7:
 				ES.showStreams();
 				printMenu();
 				break;
+			case 8:
+				s.close();
+				System.out.println("You have exited the system.");
+				System.exit(0);
 			}
 		}
 
@@ -113,8 +129,10 @@ public class UseEmployee {
 		System.out.println("2. Display yearly salary");// calculateYearlySalary()
 		System.out.println("3. Display specific employee details");//findByEmployeeNumber()
 		System.out.println("4. Modify the employee details");
-		System.out.println("5. Delete an employee");
-		System.out.println("6. Display Streams");
+		System.out.println("5. Add an employee");
+		System.out.println("6. Delete an employee");
+		System.out.println("7. Display Streams");
+		System.out.println("8. Exit the system");
 
 	}
 	static void printMenuDetails() {
