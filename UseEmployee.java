@@ -1,17 +1,19 @@
-import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.Logger;
+//import org.apache.log4j.BasicConfigurator;
+//import org.apache.log4j.Logger;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.Logger;
-import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.Logger;
+import java.util.logging.Level;
 
+//import org.apache.log4j.BasicConfigurator;
+//import org.apache.log4j.Logger;
+
+import java.util.logging.Logger;
 
 
 public class UseEmployee {
-	static final Logger logger = Logger.getLogger(UseEmployee.class);
+	
+	private static final Logger LOGGER = Logger.getLogger(UseEmployee.class.getName());
 	static Scanner s = new Scanner(System.in);
 	static int selection = 0;
 	public static EmployeeServiceImpl ES = new EmployeeServiceImpl();
@@ -19,8 +21,8 @@ public class UseEmployee {
 	public static void main(String[] args) {
 		//
 		//Configure logger
-		BasicConfigurator.configure();
-		logger.debug("Hello World!");
+		//BasicConfigurator.configure();
+		//logger.debug("Hello World!");
 		
 		Address a1 = new Address("Phoenix","Alaska");
 		Address a2 = new Address("Billings","New Hampshire");
@@ -94,6 +96,7 @@ public class UseEmployee {
 			case 5:
 				System.out.println("Enter employee number 101-105: ");
 				ES.deleteEmployee(s.nextInt());
+				LOGGER.log(Level.INFO, "Employee successfully deleted.");
 				printMenu();
 				break;
 			case 6:

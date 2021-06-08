@@ -21,6 +21,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 		empList.forEach(str -> System.out.println(str));
 
 	}
+	public void displayAllEmployees() {
+		UseEmployee.empList.forEach(str -> System.out.println(str));
+
+	}
 
 	// Calculate the yearly salary of employee base $40K + $1K per yrs experience
 	public double calculateYearlySalary(List<Employee> empList, int empNo) {
@@ -91,7 +95,7 @@ return e;
 			if (e.getEmpNo() == empNo) {
 				UseEmployee.empList.remove(i);
 				System.out.flush();
-				displayAllEmployees(UseEmployee.empList);
+				displayAllEmployees();
 			}
 			}
 			// return null;
@@ -108,7 +112,7 @@ return e;
 		long empTotal = UseEmployee.empList.stream().count();
 		System.out.println("Show Employee Count: " + empTotal);
 		
-//		boolean matchedResult = UseEmployee.empList.get(0).stream().anyMatch((s) -> s.contains("A"));   
+//		boolean matchedResult = UseEmployee.empList.stream().anyMatch((s) -> s.contains("A"));   
 //		System.out.println(matchedResult);
 		
 //		UseEmployee.empList.stream().filter((s) -> s.startsWith("A"))
