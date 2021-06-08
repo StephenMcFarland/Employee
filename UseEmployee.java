@@ -69,14 +69,15 @@ public class UseEmployee {
 				break;
 			case 4:
 				System.out.println("Enter employee number 101-105: ");
-				int empNo;
-				//try {
+				int empNo =-1;
+				try {
 					empNo = s.nextInt();
-					//}catch(InputMismatchException e) {
+					
+					}catch(InputMismatchException e) {
 						//String str = s.nextLine();
-						ES.findByEmployeeNumber(empList, empNo);
-					//}
-				
+						System.out.println("You didn't enter a number.");
+					}
+				ES.findByEmployeeNumber(empList, empNo);
 				
 				printMenuDetails();
 				selection = s.nextInt();
