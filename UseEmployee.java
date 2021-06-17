@@ -32,9 +32,9 @@ public class UseEmployee {
 		Address a5 = new Address("Qualitee","Florida");
 
 		Employee e1 = new Employee(101, "Ginni", 15,a1.getEmpCity(),a1.getEmpState());
-		Employee e2 = new Employee(102, "George", 2,a2.getEmpCity(),a2.getEmpState());
+		Employee e2 = new Employee(102, "Jorge", 2,a2.getEmpCity(),a2.getEmpState());
 		Employee e3 = new Employee(103, "Gack", 44,a3.getEmpCity(),a3.getEmpState());
-		Employee e4 = new Employee(104, "Gared", 9,a4.getEmpCity(),a4.getEmpState());
+		Employee e4 = new Employee(104, "Jared", 9,a4.getEmpCity(),a4.getEmpState());
 		Employee e5 = new Employee(105, "Gessica", 52,a5.getEmpCity(),a5.getEmpState());
 
 		empList.add(e1);
@@ -137,7 +137,7 @@ public class UseEmployee {
 	static void printMenu() {
 		System.out.println("1. List all employees");// displayAllEmployees()
 		System.out.println("2. Display yearly salary");// calculateYearlySalary()
-		System.out.println("3. Display specific employee details");//findByEmployeeNumber()
+		System.out.println("3. Display employee details by employee number");//findByEmployeeNumber()
 		System.out.println("4. Modify the employee details");
 		System.out.println("5. Add an employee");
 		System.out.println("6. Delete an employee");

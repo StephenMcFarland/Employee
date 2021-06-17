@@ -4,7 +4,7 @@ public class Employee {
 	private transient String empName;
 	private transient String empCity;
 	private transient String empState;
-	private double salary;
+	private int yearsx;
 	private int empNo;
 	//private Address address;
 
@@ -20,16 +20,16 @@ public class Employee {
 	 * @return the monthlySalary
 	 */
 
-	public double getSalary() {
-		return salary;
+	public double getYearsx() {
+		return yearsx;
 	}
 
 	/**
 	 * @param monthlySalary the monthlySalary to set
 	 */
 
-	public void setSalary(double salary) {
-		this.salary = salary;
+	public void setYearsx(double yearsx) {
+		this.yearsx = yearsx;
 	}
 
 	/**
@@ -46,11 +46,11 @@ public class Employee {
 		this.empNo = empNo;
 	}
 	
-	public Employee(int empNo, String empName, int salary, String empCity, String empState) {
+	public Employee(int empNo, String empName, int yearsx, String empCity, String empState) {
 		super();
 		this.empNo = empNo;
 		this.empName = empName;
-		this.salary = salary;
+		this.yearsx = yearsx;
 		this.empCity = empCity;
 		this.empState = empState;
 	}
