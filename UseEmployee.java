@@ -86,8 +86,6 @@ public class UseEmployee {
 				}
 				break;
 			case 5:
-				// System.out.println("Enter employee number 1 greater than last employee: ");
-				// int empNo = s.nextInt();
 				System.out.println("Enter employee name: ");
 				String ename = s.next();
 				System.out.println("Enter years of experience: ");

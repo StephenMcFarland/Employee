@@ -29,7 +29,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	}
 
-	public double calculateSalary(int empNoYrExp, int baseSalary) {
+	public int calculateSalary(int empNoYrExp, int baseSalary) {
 		int yearlySalary = 0;
 
 		yearlySalary = empNoYrExp * 1000 + baseSalary;
