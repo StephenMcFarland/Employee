@@ -1,15 +1,8 @@
-
-//import org.apache.log4j.BasicConfigurator;
-//import org.apache.log4j.Logger;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Level;
-
-//import org.apache.log4j.BasicConfigurator;
-//import org.apache.log4j.Logger;
-
 import java.util.logging.Logger;
 
 public class UseEmployee {
@@ -21,11 +14,7 @@ public class UseEmployee {
 	public static List<Employee> empList = new ArrayList<Employee>();
 
 	public static void main(String[] args) {
-		//
-		// Configure logger
-		// BasicConfigurator.configure();
-		// logger.debug("Hello World!");
-
+		
 		Address a1 = new Address("Phoenix", "Alaska");
 		Address a2 = new Address("Billings", "New Hampshire");
 		Address a3 = new Address("Springfield", "Kansas");
@@ -81,19 +70,16 @@ public class UseEmployee {
 				selection = s.nextInt();
 				switch (selection) {
 				case 1:
-					System.out.flush();
 					System.out.println("Enter new employee name: ");
 					ES.updateEmpName(empNo, s.next());
 					printMenu();
 					break;
 				case 2:
-					System.out.flush();
 					System.out.println("Enter new employee City: ");
 					ES.updateEmpCity(empNo, s.next());
 					printMenu();
 					break;
 				case 3:
-					System.out.flush();
 					System.out.println("Enter new employee State: ");
 					ES.updateEmpState(empNo, s.next());
 					printMenu();
