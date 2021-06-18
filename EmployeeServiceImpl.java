@@ -8,15 +8,6 @@ import java.util.stream.Stream;
 
 public class EmployeeServiceImpl implements EmployeeService {
 
-	// static List<String> empList = new ArrayList<String>();
-
-	/*
-	 * empList.add("101 george smith 55000 phoenix alaska");
-	 * empList.add("102 ginny smith 85000 holms texas");
-	 * empList.add("103 gale smith 75000 springfield florida");
-	 * empList.add("104 greg smith 65000 qualitee vermont");
-	 */
-
 	public void displayAllEmployees(List<Employee> empList) {
 		empList.forEach(str -> System.out.println(str));
 
@@ -38,8 +29,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	}
 
-	public double calculateSalary(int empNoYrExp, double baseSalary) {
-		double yearlySalary = 0;
+	public double calculateSalary(int empNoYrExp, int baseSalary) {
+		int yearlySalary = 0;
 
 		yearlySalary = empNoYrExp * 1000 + baseSalary;
 
@@ -58,47 +49,44 @@ public class EmployeeServiceImpl implements EmployeeService {
 			i++;
 		}
 
-		// System.out.println(e.toString());
+		
 		return e;
-//			if(i>empList.size()) {
-//				System.out.println("No such employee found.");
-//			}
+
 	}
 
 	public void addEmployee(String name, int yearsExp, String city, String state) {
-		//
+		
 		int eNo = UseEmployee.empList.size() + 101;
 
-		Address a6 = new Address(city, state);
+		Address a = new Address(city, state);
 
-		Employee e6 = new Employee(eNo, name, yearsExp, a6.getEmpCity(), a6.getEmpState());
+		Employee e = new Employee(eNo, name, yearsExp, a.getEmpCity(), a.getEmpState());
 
-		UseEmployee.empList.add(e6);
+		UseEmployee.empList.add(e);
 	}
 
 	public void updateEmpName(int empNo, String name) {
-		// TODO Auto-generated method stub
+	
 		Employee e = findByEmployeeNumber(UseEmployee.empList, empNo);
 		e.setEmpName(name);
-		// UseEmployee.empList.add(e);
+		
 	}
 
-//	public void updateEmpCity(int empNo, String city) {
-//		// TODO Auto-generated method stub
-//		Employee e = findByEmployeeNumber(UseEmployee.empList, empNo);
-//		e.setEmpName(city);
-//		//UseEmployee.empList.add(e);
-//	}
-//	public void updateEmpState(int empNo, String state) {
-//		// TODO Auto-generated method stub
-//		Employee e = findByEmployeeNumber(UseEmployee.empList, empNo);
-//		e.setEmpName(state);
-//		//UseEmployee.empList.add(e);
-//	}
+	public void updateEmpCity(int empNo, String city) {
+		
+		Employee e = findByEmployeeNumber(UseEmployee.empList, empNo);
+		e.setEmpCity(city);
+		
+	}
+	
+	public void updateEmpState(int empNo, String state) {
+		Employee e = findByEmployeeNumber(UseEmployee.empList, empNo);
+		e.setEmpState(state);
+	}
+	
 	public void deleteEmployee(int empNo) {
-		// TODO Auto-generated method stub
-		Employee e;// = empList.get(emp);
-		// List<Employee> tempList = new ArrayList<Employee>();
+		
+		Employee e;
 
 		for (int i = 0; i < UseEmployee.empList.size(); i++) {
 
@@ -109,50 +97,44 @@ public class EmployeeServiceImpl implements EmployeeService {
 				displayAllEmployees();
 			}
 		}
-		// return null;
+		
 	}
 
 	@Override
 	public String showStreams() {
-		// memberNames.stream().filter((s) -> s.startsWith("A"))
-		// .forEach(System.out::println);
+		
 		System.out.println("Show Employee List using forEach: ");
 		UseEmployee.empList.forEach(System.out::println);
 
 		long empTotal = UseEmployee.empList.stream().count();
 		System.out.println("\nShow Employee Count using stream count: " + empTotal);
 
-//		long empTotal = UseEmployee.empList.stream().count();
-//		System.out.println("Show Employee Count: " + empTotal);
-
 		List<String> namesA = new ArrayList<>();
-				for(Employee e:UseEmployee.empList) {
-					namesA.add(e.getEmpName());
-				}
-				List<String> namesAresult = namesA.stream().filter(s -> s.contains("a")).collect(Collectors.toList());   
-		System.out.println("\nAny names that contain 'a' using filter: "+ namesAresult);
+		for (Employee e : UseEmployee.empList) {
+			namesA.add(e.getEmpName());
+		}
+		List<String> namesAresult = namesA.stream().filter(s -> s.contains("a")).collect(Collectors.toList());
+		System.out.println("\nAny names that contain 'a' using filter: " + namesAresult);
 
+		ListIterator<String> iterator = namesAresult.listIterator(namesAresult.size());
+
+		System.out.print("\nNames containing 'a' in reverse order using ListIterator<> : ");
 		
+		while (iterator.hasPrevious()) {
+			System.out.print(iterator.previous() + ", ");
+		}
+		System.out.println();
 
-		 ListIterator<String> iterator = namesAresult.listIterator(namesAresult.size());
+		List<String> names = Arrays.asList(UseEmployee.empList.get(0).getEmpName(),
+				UseEmployee.empList.get(1).getEmpName(), UseEmployee.empList.get(2).getEmpName(),
+				UseEmployee.empList.get(3).getEmpName(), UseEmployee.empList.get(4).getEmpName());
 
-     
-		 System.out.print("\nNames containing 'a' in reverse order using ListIterator<> : ");
-		 //System.out.print("[");
-     while (iterator.hasPrevious()) {
-         System.out.print(iterator.previous()+", ");
-     }
-     System.out.println("");
-	
-	List<String> names = Arrays.asList(UseEmployee.empList.get(0).getEmpName(),
-			UseEmployee.empList.get(1).getEmpName(), UseEmployee.empList.get(2).getEmpName(),
-			UseEmployee.empList.get(3).getEmpName(), UseEmployee.empList.get(4).getEmpName());
+		List<String> result = names.stream().filter(s -> s.startsWith("G")).collect(Collectors.toList());
+		System.out.println("\nNames that start with 'G' using filter and collect: " + result);
 
-	List<String> result = names.stream().filter(s -> s.startsWith("G")).collect(Collectors.toList());
-	System.out.println("\nNames that start with 'G': " + result + "\n");
-	
-	
-	return null;
+		List<String> resultA = namesA.stream().filter(s -> s.startsWith("G")).collect(Collectors.toList());
+		System.out.println("\nNames that start with 'G' using enhanced for loop, filter, and collect: " + resultA + "\n");
+		return null;
 	}
-	
+
 }

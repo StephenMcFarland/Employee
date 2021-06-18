@@ -15,33 +15,36 @@ public class Employee {
 	public void setEmpName(String empName) {
 		this.empName = empName;
 	}
+	public String getEmpCity() {
+		return empCity;
+	}
 
-	/**
-	 * @return the monthlySalary
-	 */
+	public void setEmpCity(String empCity) {
+		this.empCity = empCity;
+	}
+	public String getEmpState() {
+		return empState;
+	}
+
+	public void setEmpState(String empState) {
+		this.empState = empState;
+	}
 
 	public double getYearsx() {
 		return yearsx;
 	}
 
-	/**
-	 * @param monthlySalary the monthlySalary to set
-	 */
 
-	public void setYearsx(double yearsx) {
+	public void setYearsx(int yearsx) {
 		this.yearsx = yearsx;
 	}
 
-	/**
-	 * @return the age
-	 */
+	
 	public int getEmpNo() {
 		return empNo;
 	}
 
-	/**
-	 * @param age the age to set
-	 */
+	
 	public void setEmpNo(int empNo) {
 		this.empNo = empNo;
 	}

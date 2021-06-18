@@ -5,22 +5,18 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-
+import static org.junit.Assert.*;  
+import com.javatpoint.logic.*;  
+import org.junit.Test; 
 
 
 class EmployeeServiceImplTest {
-	private EmployeeServiceImpl employeeServiceImpl;
-	//@BeforeEach
-//	void initEach() {
-//		employeeService = new EmployeeService();
-//	}
+	public EmployeeServiceImpl employeeServiceImpl;
 
-	//@Nested
-	//class AddTest {
-		@SuppressWarnings("deprecation")
-		@org.junit.Test
-		void testCalculateSalary() {
-			assertEquals(50000, employeeServiceImpl.calculateSalary(10, 40000));
+	@SuppressWarnings("deprecation")
+	@Test
+		public void testCalculateSalary() {
+			assertEquals(1000, employeeServiceImpl.calculateSalary(1, 1000));
 					
 		}
 		
