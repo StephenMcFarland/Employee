@@ -114,6 +114,8 @@ public class UseEmployee {
 				s.close();
 				System.out.println("You have exited the system.");
 				System.exit(0);
+				default :
+					System.out.println("Make sure your selection is a number between 1 and 8.");
 			}
 		}
 
